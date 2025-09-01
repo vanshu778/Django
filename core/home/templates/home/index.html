@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{%block start%}
+    <h1>This is Index Page</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab sit quisquam corporis quibusdam vel ullam quam fugit vero amet doloribus recusandae eum alias dolorem dicta fugiat, perferendis veniam, quis quasi.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error at quis impedit? Nulla repellendus illum deserunt ullam sed, quam, omnis sunt officiis quas cupiditate vitae adipisci quod magni voluptatem quaerat.
+    </p>
+
+    <table>
+        <tr>
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Can vote</th>
+        </tr>
+        {%for people in peoples%}
+         <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{people.name}}</td>
+            <td>{{people.age}}</td>
+            <td>
+                {%if people.age >= 18%}
+                👍
+                {%else%}
+                👎
+                {%endif%}
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+{%endblock%}
